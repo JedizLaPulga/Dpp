@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"jedizlapulga"
+	],
+	"copyright": "Copyright © 2026, jedizlapulga",
+	"description": "A minimal D application.",
+	"license": "proprietary",
+	"name": "dpp"
+}
