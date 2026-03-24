@@ -4,11 +4,16 @@ import std.typecons;
 void main() {
     // Create the tuple
     auto tup = tuple(500, 6.4, 1);
-    // Unpack (destructure) the tuple
-    auto x = tup[0];
-    auto y = tup[1];
-    auto z = tup[2];
 
-    writeln("The value of y is: ", y);
-    
+    // Loop over the tuple elements
+    foreach (i, elem; tup.tupleof) {
+        writeln("Element ", i, ": ", elem);
+    }
+
+    foreach (i, elem; tup.tupleof) {
+        writeln("Element ", i, ": ", elem);
+    }
+
+    // The tuple remembers its length
+    writeln("Tuple length: ", tup.length);
 }
