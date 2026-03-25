@@ -17,9 +17,11 @@ module src.vector;
             this.data = cast(T*)malloc(this.capacity * T.sizeof);
 
             static foreach (i; 0 .. args.length) {
+            
+        
             // Check if the argument can actually be assigned to T
-            static assert(is( typeof(args[i]) : T),  "Argument at index "  ~ i.stringof ~  
-            " is not compatible with " ~ T.stringof);
+            static assert(is( typeof(args[i]) : T),  "Incompactible type for Vector!T: " 
+                ~typeof(args[i]).stringof);
                 import core.lifetime : emplace;
                 emplace(&data[i], args[i]);
             }
