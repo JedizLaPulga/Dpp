@@ -33,7 +33,7 @@ module src.vector;
         }
 
         @property size_t length() const { return _length; }
-
+        @property size_t capacity() const { return _capacity; }
 
         ~this(){
             if (_data !is null) {
