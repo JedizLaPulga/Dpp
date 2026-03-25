@@ -1,19 +1,6 @@
-import std.stdio;
-import std.typecons;
 
-void main() {
-    // Create the tuple
-    auto tup = tuple(500, 6.4, 1);
+import src.vector;
 
-    // Loop over the tuple elements
-    foreach (i, elem; tup.tupleof) {
-        writeln("Element ", i, ": ", elem);
-    }
+void main(){
 
-    foreach (i, elem; tup.tupleof) {
-        writeln("Element ", i, ": ", elem);
-    }
-
-    // The tuple remembers its length
-    writeln("Tuple length: ", tup.length);
 }
