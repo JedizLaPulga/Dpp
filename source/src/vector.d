@@ -32,10 +32,21 @@ module src.vector;
             swap(this._capacity, other._capacity);
         }
 
+        @property size_t length() const { return _length; }
 
 
         ~this(){
-            free(_data);
+            if (_data !is null) {
+            // If T has a destructor (like a string or another struct), 
+            // you should call it for each element before freeing.
+            static if (__traits(hasMember, T, "__dtor")) {
+                foreach (i; 0 .. _length) {
+                    destroy(_data[i]);
+                }
+            }
+                free(_data);
+            }
+            free(null); // Just to be safe, set _data to null after freeing
         }
 
     
