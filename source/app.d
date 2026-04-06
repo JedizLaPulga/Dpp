@@ -1,15 +1,19 @@
 
-import src.vector;
 import std.stdio;
-import core.lifetime : emplace, move;
 
-void main(){
+void main() {
+    int counter = 0;
 
-    auto vec = Vector!int(1, 2, 3, 4, 5);
-    auto vec2 = move(vec); // Move vec into vec2, vec should now be empty
-  
-    writeln("Vector length: ", vec2.length);
-    writeln("Vector capacity: ", vec2.capacity);
-   
+    while(true){
+        stdout.writefln("Counter: %d", counter++);
+        if(counter >= 10){
+            break;
+        }
+
+        stdout.writeln(counter.alignof);
+
+
+
+    }
 
 }
